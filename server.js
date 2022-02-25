@@ -8,12 +8,13 @@ const auth = require("./router/api/Auth");
 var mongodbCache = require('mongodb-redis-cache');
 
 const db = require("./config/key").mongoURI;
-const REDIS_URL = require("./config/key").REDIS_URL;
+const REDIS = require("./config/key").REDIS;
 mongoose
     .connect(db)
     .then(() => console.log("mongoDB Connected"))
     .catch((err) => console.log(err));
-    mongodbCache(mongoose, REDIS_URL);
+
+mongodbCache(mongoose, REDIS);
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
