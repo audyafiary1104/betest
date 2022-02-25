@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 module.exports = {
-    mongoURI:"mongodb://localhost:27017/btpn" ,
-    secret: "btpn-test",
+    mongoURI:process.env.mongoURI ,
+    secret: process.env.secret,
     REDIS:{
-        host: 'redis-19163.c10.us-east-1-3.ec2.cloud.redislabs.com',
-        port: 19163,
-        password: 'MUreuT8jNG7feZ4QwB1h7gnFIXGSFUSY'
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT,
+        password: process.env.REDIS_PASSWORD
     }
 };

@@ -19,7 +19,7 @@ exports.Login = async (req, res, next) => {
 exports.CreateUsers = async (req, res, next) => {
     const schema = yup.object({
         body: yup.object({
-          username: yup.string().required(),
+          userName: yup.string().required(),
           accountNumber: yup.string().required(),
           emailAddress: yup.string().required(),
           identityNumber: yup.string().required(),
